@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            display: none ;
+        }
+        ul,ol{
+            list-style:none;
+        }
+        #tab li,#arrow span{
+            height: 20px;
+            width: 20px;
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+            float: left;
+            margin-right: 5px;
+        }
+        #container{
+            position: relative;
+            width: 520px;
+            height: 280px;
+            margin: 200px auto;
+        }
+        #imgs .selected{
+            display: block;
+        }
+        #arrow{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+        #tab{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            margin: 0px;
+        }
+        #tab .selected{
+            background: orange;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="imgs">
+            <img src="img/1.jpg" alt=""class="selected"><img src="img/2.jpg" alt=""><img src="img/3.jpg" alt=""><img src="img/4.jpg" alt="">
+            <ul id="tab">
+                <li class="selected">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+            <div id="arrow">
+                <span id="back">&lt</span>
+                <span id="front">&gt</span>
+            </div></div>
+    </div>
+
+
+<script>
+        var ocontainer=document.getElementById('container');
+        var otab =document.getElementById('tab');
+        var ali=otab.getElementsByTagName('li');
+        var oimgs=document.getElementById('imgs');
+        var aimg= document.getElementsByTagName('img');
+        var oback=document.getElementById('back');
+        var ofront=document.getElementById('front');
+
+        var inowindex=0 ;
+
+
+        for(var i=0;i<ali.length;i++){
+            ali[i].index=i;
+            ali[i].onmouseover= function () {
+                inowindex =this.index ;
+                changeimg();
+            }
+        }
+        oback.onclick=ofront.onclick=function () {
+            console.log(this);
+            if(this==back){
+                inowindex--;
+                if(inowindex==-1){
+                    inowindex=aimg.length -1;
+                }
+            }else{
+                inowindex++;
+                if(inowindex==4){
+                    inowindex=0;
+                }
+            }
+            changeimg();
+        }
+        function changeimg() {
+            for(var i=0; i<ali.length;i++){
+             ali[i].className='';
+             aimg[i].className='';
+            }
+            ali[inowindex].className='selected';
+            aimg[inowindex].className='selected';
+        }
+        oback.onselectstart = ofront.onselectstart = function () {
+            return false;
+        };//用户体验问题；
+
+        ocontainer.onmouseover=function () {
+            clearInterval(timer);
+        }
+        ocontainer.onmouseout=function () {
+            play();
+        }
+
+
+        function play() {
+            timer=setInterval(function () {
+                ofront.onclick ();
+            },1000)
+        }
+        play();
+
+        
+    </script>
+</body>
+</html>

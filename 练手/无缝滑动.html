@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝滑动</title>
+    <style>
+        /*css reset*/
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul,ol{
+            list-style:none;
+        }
+        a{
+            text-decoration: none;
+        }
+        img{
+            border: 0;
+        }
+        ul,ol{
+            list-style:none;
+        }
+        .container{
+            width: 320px;
+            height: 200px;
+            border: 1px solid;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        #ul1{
+            width: 440px;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+                  }
+        #ul1 li{
+            float: left;
+            height: 100px;
+            width: 100px;
+            background: #000000;
+            color: #ffffff;
+            margin-right: 10px;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+
+        }
+        #arrows{
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            margin-left: -75px;
+        }
+        .container span{
+            float: left;
+            width: 60px;
+            height: 20px;
+            background: #aaaaaa;
+            color: #ffffff;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+            margin-right: 20px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul id="ul1">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="arrows">
+            <span id="left">向左</span><span id="right">向右</span>
+        </div>
+    </div>
+
+
+    <script>
+        var oul=document.getElementById('ul1');
+        var oleft=document.getElementById('left');
+        var oright=document.getElementById('right');
+        var timer;
+        var x;
+
+
+        oul.innerHTML+=oul.innerHTML;
+        oul.style.width=oul.offsetWidth*2+'px';
+        oleft.onclick=oright.onclick=function () {
+            console.log(this);
+            if(this==left)
+            {
+                clearInterval(timer);
+                x=-10;
+                play();
+            }else{
+                clearInterval(timer);
+                x=10;
+                play();
+            }
+        }
+        function play() {
+            timer = setInterval(function () {
+                oul.style.left=oul.offsetLeft+x+'px';
+                if(-oul.offsetLeft >=oul.offsetWidth/2){
+                    oul.style.left=0;
+                }
+                if(oul.offsetLeft>0){
+                    oul.style.left= -(oul.offsetWidth/2)+'px';
+                }
+            }, 50)
+        }
+
+
+
+
+    </script>
+</body>
+</html>
