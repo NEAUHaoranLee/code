@@ -32,19 +32,22 @@
         <div id="div1"></div>
 
         <script>
-            oMove=document.getElementById('div1');
+            var oMove=document.getElementById('div1');
             var x;
             var y;
 
-            oMove.onclick=function (e) {
+            oMove.onmousedown=function (e) {
                 console.log(e.clientX+','+e.clientY);
                 x=e.clientX - oMove.offsetLeft;
                 y=e.clientY - oMove.offsetTop;
 
-                oMove.onmousemove=function (e) {
+                document.onmousemove=function (e) {
                     oMove.style.left=e.clientX-x+'px';
                     oMove.style.top=e.clientY-y+'px';
                 }
+            }
+            oMove.onmouseup=function(){
+                document.onmousemove=null;
             }
 
 
