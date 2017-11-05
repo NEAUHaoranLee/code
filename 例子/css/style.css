@@ -1,0 +1,44 @@
+/*css reset*/
+*{
+    padding: 0;
+    margin: 0;
+}
+ul,ol{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border: 0;
+}
+.container{
+    margin: 0 auto;
+}
+/*公共样式*/
+/*banner开始*/
+.banner{
+    height: 120px;
+    background:url("banner.jpg") no-repeat 50% 50%;
+}
+.banner a{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+/*banner结束*/
+/*menu开始*/
+#menu{
+    height: 40px;
+    background: #333333;
+}
+.container{
+    width: 1226px;
+    height: 40px;
+}
+.container a{
+    line-height: 40px;
+    color: #b0b0b0;
+    float: left;
+}
+/*menu结束*/
