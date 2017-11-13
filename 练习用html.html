@@ -6,21 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-
     <style>
-
+        #a,
+        #b {
+            float: left;
+            width: 50px;
+            height: 20px;
+            background: gray;
+            cursor: pointer;
+        }
+        
+        div {
+            height: 20px;
+        }
     </style>
 </head>
 
 <body>
-    <div id="div1">div1</div>
-
-
+    <div>
+        <span id="a">大大大</span>
+        <span id="b">小小小</span>
+    </div>
+    <textarea name="" id="c" cols="30" rows="10"></textarea>
     <script src="jquery-3.2.1.js"></script>
     <script>
-        $('#div1').css('background', 'red');
+        $('#a').on('click', function() {
+            if (!$('#c').is(':animated')) {
+                $('#c').animate({
+                    height: '+=50'
+                }, 500);
+            }
+        })
     </script>
-
 </body>
 
 </html>

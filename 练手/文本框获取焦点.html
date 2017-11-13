@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <label for="username">名称</label>
+        <input type="username" id="username" value="名称">
+    </div>
+    <div>
+        <label for="password">密码</label>
+        <input type="password" id="password" value="密码">
+    </div>
+    <div>
+        <label for="detail">详细信息</label>
+        <textarea rows="3" cols="20" id="detail">详细信息</textarea>
+    </div>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        $('input').focus(function() {
+            $(this).addClass('focus');
+            if ( /* this.value */ $(this).val() == this.defaultValue) {
+                this.value = '';
+            };
+        }).blur(function() {
+            $(this).removeClass('focus');
+            // .val(this.value == '' ? this.defaultValue : this.value);
+            if (this.value == '') {
+                this.value = this.defaultValue;
+            };
+        })
+    </script>
+</body>
+
+</html>

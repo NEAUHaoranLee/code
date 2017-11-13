@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #big,
+        #small {
+            width: 50px;
+            height: 30px;
+            background: #cccccc;
+            margin-right: 5px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        
+        div {
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span id="big">放大</span>
+        <span id="small">缩小</span>
+    </div>
+    <textarea name="" id="text" cols="30" rows="10"></textarea>
+
+    <script src="../jquery-3.2.1.js"></script>
+    <script>
+        $('#big').on('click', function() {
+            var $height = $('#text').innerHeight();
+            console.log($height);
+            $('#text').css('height', $height + 20);
+        });
+        $('#small').on('click', function() {
+            var $height = $('#text').innerHeight();
+            $('#text').css('height', $height - 20);
+        });
+    </script>
+</body>
+
+</html>

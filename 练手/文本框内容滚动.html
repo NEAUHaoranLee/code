@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #big,
+        #small {
+            width: 50px;
+            height: 30px;
+            background: #cccccc;
+            margin-right: 5px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        
+        div {
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span id="big">向下</span>
+        <span id="small">向上</span>
+    </div>
+    <textarea name="" id="text" cols="30" rows="10"></textarea>
+
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+        $('#big').on('click', function() {
+            var $scroll = $('#text').scrollTop();
+            console.log($scroll);
+            $('#text').animate({
+                scrollTop: $scroll + 20
+            }, 400)
+        });
+        $('#small').on('click', function() {
+            var $scroll = $('#text').scrollTop();
+            $('#text').animate({
+                // console.log($height);
+                scrollTop: $scroll - 20
+            }, 400)
+        });
+    </script>
+</body>
+
+</html>
