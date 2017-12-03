@@ -9,20 +9,47 @@
 </head>
 
 <body>
-    <div><label for="name">名称</label><input type="username" name="" id="name" value="名称"></div>
-    <div><label for="password">密码</label><input type="password" name="" id="password" value="密码"></div>
-    <div><label for="detail">详细信息</label><textarea name="" id="detail" cols="30" rows="10">详细信息</textarea></div>
+    <div id="123"></div>
+    <div class="aa"></div>
 
-    <script src="jquery-3.2.1.js"></script>
+
     <script>
-        $('input').focus(function() {
-            if ($(this).val() == this.defaultValue) {
-                this.value = '';
-            };
-        }).blur(function() {
-            $(this).val(this.value == '' ? this.defaultValue : this.value);
-        });
+        function $(selector, context) {
+            return new Jquery(selector, context); //？
+        }
+
+        function Jquery(selector, context) {
+            this.elements = []; //jq返回数组所以定义数组？
+            // console.log(this.elements);
+            if (typeof selector === 'string') {
+                if (selector.charAt(0) === '#') {
+                    this.elements.push(document.getElementById(selector.substring(1)));
+                    console.log(this.elements);
+                } else if (selector.charAt(0) === '.') {
+                    this.element.push(document.getElementsByClassName(selector.substring(1)))
+
+                }
+
+            }
+
+        }
+        console.log($('.aa'));
+        // console.log($('#123'));
+
+
+        // var o = {
+        //     name: 'lisi',
+        //     age: 18
+        // };
+        // console.log(o['name']);
+
+
+        // for (var p in o) {
+        //     console.log(o[p]);
+        // }
     </script>
+
+
 </body>
 
 </html>

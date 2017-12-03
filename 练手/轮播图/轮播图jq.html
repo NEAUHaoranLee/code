@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*css reset*/
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        ul,
+        ol {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        img {
+            border: 0;
+            display: none;
+        }
+        
+        #container {
+            height: 280px;
+            width: 520px;
+            position: relative;
+            margin: 200px auto;
+        }
+        
+        #imgs {
+            height: 280px;
+            width: 520px;
+            overflow: hidden;
+        }
+        
+        #arrow {
+            position: absolute;
+            top: 250px;
+            left: 10px;
+        }
+        
+        #tab {
+            position: absolute;
+            top: 250px;
+            left: 400px;
+        }
+        
+        #left,
+        #right,
+        #tab li {
+            background: #000000;
+            color: #ffffff;
+            height: 20px;
+            width: 20px;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 5px;
+            /* border: 1px solid #ff0000; */
+            float: left;
+            cursor: pointer;
+        }
+        
+        #imgs .selected {
+            display: block;
+        }
+        
+        #tab .selected {
+            background: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="imgs">
+            <img src="img/1.jpg" alt="" class="selected">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+        </div>
+        <div id="arrow">
+            <span id="left"><</span>
+            <span id="right">></span>
+        </div>
+        <ul id="tab">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+    <script src="../../jquery-3.2.1.js"></script>
+    <script>
+        var $tab = $('#tab li');
+        var $this = 0;
+        $tab.on('mouseover', function() { //1234换页
+                $this = $(this).index();
+                var $img_li = $(this).add($('#imgs img').eq($this));
+                // $img_li.removeClass().eq($this).addClass('selected')
+                $img_li.addClass('selected').siblings().removeClass('selected');
+            })
+            // 左右标签
+        $('#arrow span').on('click', function() {
+                if (this == left) {
+                    // console.log(1);
+                    $this--;
+                    if ($this <= -1) {
+                        $this = $('#tab li').length - 1;
+                    }
+                } else {
+                    $this++;
+                    if ($this >= 4) {
+                        $this = 0;
+                    }
+                }
+                console.log($this);
+                change();
+            })
+            // 延时函数
+        $('#container').on('mouseover', function() {
+            clearInterval(timer);
+        })
+        $('#container').on('mouseout', function() {
+            play();
+        })
+
+        function play() {
+            timer = setInterval(function() {
+                $('#right').trigger('click');
+            }, 1000)
+        }
+        play();
+
+        function change() {
+            $tab.eq($this).add($('#imgs img').eq($this)).addClass('selected').siblings().removeClass('selected');
+        }
+    </script>
+</body>
+
+</html>
