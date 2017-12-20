@@ -1,0 +1,56 @@
+/*css reset*/
+*{
+    padding: 0;
+    margin: 0;
+}
+ul,ol{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border: 0;
+}
+.carousel-container{
+    height: 280px;
+    width: 520px;
+    position: relative;
+}
+.carousel-imgs img{
+    display: none;
+}
+.carousel-imgs .selected{
+    display: block;
+}
+.carousel-arrows span,.carousel-nav li{
+    border: 1px;
+    background: #000000;
+    color:#FFFFFF;
+    margin-left: 5px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.carousel-arrows span{
+    float: left;
+}
+.carousel-arrows{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+.carousel-nav li{
+    float: left;
+}
+.carousel-nav{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.carousel-nav .selected{
+    background:orange;
+}
+
+

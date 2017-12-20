@@ -9,18 +9,20 @@
 </head>
 
 <body>
-    <script src="require/require-max.js" data-main="练习用js1"></script>
+    <script>
+        function People(name1, age) {
+            this.name = name1;
+            this.age = age;
+        }
+        People.prototype.showName = function() {
+            alert(this.name);
+        };
+        var p1 = new People('lisi', 18);
+        var p2 = new People('zs', 20);
+
+        p1.showName();
+        p2.showName();
+    </script>
 </body>
-<button type="">open</button>
-<div id="dialog-container">
-    <div id="dialog-mask"></div>
-    <div id="dialog-box">
-        <div id="dialog-title">弹出层</div>
-        <div id="dialog-close">[X]</div>
-    </div>
-</div>
-<h1>jdsj</h1>
-<h1>jdsj</h1>
-<h1>jdsj</h1>
 
 </html>
