@@ -10,19 +10,23 @@
 
 <body>
     <script>
-        function People(name1, age) {
-            this.name = name1;
-            this.age = age;
-        }
-        People.prototype.showName = function() {
-            alert(this.name);
-        };
-        var p1 = new People('lisi', 18);
-        var p2 = new People('zs', 20);
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.changeName = changeName
+            console.log(this);
 
-        p1.showName();
-        p2.showName();
+            function changeName(name) {
+                this.lastName = name;
+                console.log(this);
+            }
+        }
+        var p1 = new Person('li', 'si');
+        p1.changeName('wu')
+            // console.log(p1.lastName);
     </script>
+
+
 </body>
 
 </html>
