@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* #face1 {
+            height: 40px;
+            width: 40px;
+            background: rgb(241, 206, 91);
+            position: absolute;
+            opacity: .8;
+            bottom: 0;
+            right: 0;
+            border-radius: 50%;
+        } */
+        
+        #face2 {
+            height: 80px;
+            width: 80px;
+            background: rgb(255, 225, 124);
+            position: absolute;
+            /* border-radius: 50%; */
+            opacity: .8;
+        }
+        
+        .eye {
+            display: block;
+            background: rgba(153, 78, 8, 0.616);
+            transition: all 200ms ease;
+            position: absolute;
+        }
+        
+        #eye11 {
+            height: 12px;
+            width: 12px;
+            display: block;
+            position: absolute;
+            left: 10px;
+            top: 20px;
+            /* border-radius: 50%; */
+            /* overflow: hidden; */
+        }
+        
+        #eye12 {
+            position: absolute;
+            border-radius: 50%;
+            left: 0px;
+            right: 0;
+            bottom: 0;
+            top: 0px;
+        }
+        
+        #eye21 {
+            height: 12px;
+            width: 12px;
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 20px;
+            /* border-radius: 50%; */
+            /* overflow: hidden; */
+        }
+        
+        #eye22 {
+            position: absolute;
+            border-radius: 50%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+        }
+        
+        #mouth {
+            width: 60px;
+            /* height: 30px; */
+            /* position: absolute; */
+            border-bottom: 30px solid rgba(153, 78, 8, 0.616);
+            /* left: 10px; */
+            /* bottom: 10px; */
+            border-radius: 0 0 60px 60px;
+        }
+        
+        #mouthCtnr {
+            position: absolute;
+            top: 40px;
+            transition: all 200ms ease;
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="face2">
+        <div id="face1"></div>
+        <div id="eye11">
+            <div id="eye12" class="eye"></div>
+        </div>
+        <div id="eye21">
+            <div id="eye22" class="eye"></div>
+        </div>
+        <div id="mouthCtnr">
+            <div id="mouth"></div>
+        </div>
+
+    </div>
+
+    <script>
+        oFace = document.getElementById('face2');
+        oMouthCtnr = document.getElementById('mouthCtnr');
+        oEye11 = document.getElementById('eye11');
+        oEye12 = document.getElementById('eye12');
+        oEye21 = document.getElementById('eye21');
+        oEye22 = document.getElementById('eye22');
+        oFace.onmouseover = function() {
+            oEye22.style.top = 5 + 'px';
+            oEye12.style.top = 5 + 'px';
+            oEye22.style.bottom = 5 + 'px';
+            oEye12.style.bottom = 5 + 'px';
+            setInterval(function() {
+                oMouthCtnr.style.top = 44 + 'px';
+
+            }, 1000)
+        }
+        oFace.onmouseout = function() {
+            oEye22.style.top = 0;
+            oEye12.style.top = 0;
+            oEye22.style.bottom = 0;
+            oEye12.style.bottom = 0;
+        }
+    </script>
+</body>
+
+</html>

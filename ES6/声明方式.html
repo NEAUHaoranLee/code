@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var a = 5;
+
+        // function foo() {
+        //     console.log(a);
+        // }
+        // foo();
+
+        /* var a = 5;
+
+        function foo() {
+            console.log(a); // undefined
+            var a = 6;
+
+            // 相当于
+            var a;
+            console.log(a);
+            a = 6;
+        }
+        foo(); */
+
+        //闭包
+        /*  for (var i = 0; i < aLi.length; i++) {
+             (function(idx) {
+                 aLi[idx].onclick = function() {
+                     console.log(idx);
+                 };
+             })(i); */
+
+        function foo() {
+            function aoo(y) {
+                return y + 1;
+            }
+            return aoo;
+        }
+        console.log(foo()(2));
+    </script>
+</body>
+
+</html>

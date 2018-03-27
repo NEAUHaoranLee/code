@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="jquery-3.2.1.js">
+    </script>
+    <script>
+        let p1 = new Promise(function(resolve, reject) {
+            $.get('a.json', {}, function(res) {
+                console.log(res);
+                reject('shibai1212');
+            })
+
+        }).then(function() {
+            new Promise(function(resolve, reject) {
+                $.get('b.json', {}, function(res) {
+                    console.log(res);
+                    resolve();
+                })
+            })
+        }, function(resa) {
+            console.log(resa);
+        }).then(function() {
+            $.get('c.json', {}, function(resb) {
+                console.log(resb);
+            });
+        }, function(params) {
+            console.log(lalal);
+
+        });
+    </script>
+
+</body>
+
+</html>

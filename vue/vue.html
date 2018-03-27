@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app1">
+        {{msg}}
+    </div>
+    <div id="app2">
+        <ul>
+            <li v-for="(school,index) in schools">{{school}}----{{index}}</li>
+        </ul>
+        <ul>
+            <li v-for="obj in arrSort">
+                <div v-for="val in obj">{{val}} </div>
+            </li>
+        </ul>
+    </div>
+    <div id="app3">
+        <span v-if="istrue">没毛病</span>
+        <span v-else>有问题</span>
+    </div>
+
+    <script src="./vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app1',
+            data: {
+                msg: 'hello world',
+            }
+        })
+        new Vue({
+            el: '#app2',
+            data: {
+                schools: ['nongda', 'linda', 'heida', 'gongda', 'ligong'],
+                arr: [{
+                    name: 'zs',
+                    age: 28,
+                    company: 'baidu'
+                }, {
+                    name: 'lisi',
+                    age: 20,
+                    company: 'ali'
+                }, {
+                    name: 'ww',
+                    age: 30,
+                    company: 'tencent'
+                }]
+            },
+            computed: {
+                arrSort() {
+                    return this.arr.sort(function(a, b) {
+                        return a.age - b.age;
+                    })
+                }
+            }
+        })
+        let vm = new Vue({
+            el: '#app3',
+            data: {
+                istrue: true
+            }
+        })
+    </script>
+
+</body>
+
+</html>

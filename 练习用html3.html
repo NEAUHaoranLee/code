@@ -6,25 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .a {
+            transition: all 0.5s;
+        }
+
+        .b {
+            color: #00ff00;
+            transition: all 0.5s;
+
+        }
+
+        .b:hover {
+            color: #0000ff;
+        }
+
+        .c {
+            background: #cccccc;
+        }
+    </style>
 </head>
 
 <body>
-    <script>
-        function Person(firstName, lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.changeName = changeName
-            console.log(this);
+    <div class="a">
+        <i class="b">
+            alalalalala
+        </i>
+        <div class="c"></div>
+    </div>
 
-            function changeName(name) {
-                this.lastName = name;
-                console.log(this);
-            }
-        }
-        var p1 = new Person('li', 'si');
-        p1.changeName('wu')
-            // console.log(p1.lastName);
-    </script>
+
+
+
 
 
 </body>
