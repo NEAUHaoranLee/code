@@ -222,7 +222,7 @@ html {
     background: #17bed2;
 }
 
-.skills-icon {
+.icon {
     width: 80px;
     height: 80px;
     border: 3px solid #515769;
@@ -230,19 +230,14 @@ html {
     line-height: 80px;
     border-radius: 50%;
     transition: all 0.3s;
+    margin: 20px auto;
 }
 
-.skills-icon i {
+.icon i {
     /* display: block; */
     font-size: 50px;
     color: #515769;
     transition: all 0.3s;
-}
-
-.skills-icon {
-    /* display: block; */
-    /* position: absolute; */
-    margin: 20px auto;
 }
 
 .skills-content-detail {
@@ -259,4 +254,24 @@ html {
     border-color: #fff;
 }
 
-.skills-content:hover {}
+.product-main {
+    display: flex;
+    height: 250px;
+}
+
+.product-son1,
+.product-son2,
+.product-son3 {
+    flex-grow: 1;
+    width: 0;
+    margin: 0 3px;
+    position: relative;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.img {
+    height: 250px;
+    width: 100%;
+    background: #cccccc;
+}
