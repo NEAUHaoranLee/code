@@ -68,7 +68,7 @@ html {
 }
 
 .main-picture {
-    width: 1110px;
+    width: 100%;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -259,9 +259,7 @@ html {
     height: 250px;
 }
 
-.product-son1,
-.product-son2,
-.product-son3 {
+.product-son {
     flex-grow: 1;
     width: 0;
     margin: 0 3px;
@@ -270,8 +268,32 @@ html {
     overflow: hidden;
 }
 
+.product-son-content {
+    transition: 0.3s all;
+    position: relative;
+    top: 0;
+}
+
 .img {
     height: 250px;
     width: 100%;
-    background: #cccccc;
+    display: block;
+}
+
+.product-son-content p {
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    background: orange;
+    text-align: center;
+    line-height: 50px;
+    font-size: 13px;
+    color: #fff;
+}
+
+.img1,
+.img2,
+.img3 {
+    display: none;
+    width: 200px;
 }

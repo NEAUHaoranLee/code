@@ -1,9 +1,4 @@
-$(document).scroll(function () {
-    console.log($(document).scrollTop());
-    $('.main-picture').css({
-        'top': $(document).scrollTop() * 0.8,
-    });
-
+var ifScroll = function () {
     if ($(document).scrollTop() >= 100) {
         $('.nav').css({
             'background': '#fff',
@@ -19,6 +14,15 @@ $(document).scroll(function () {
             'color': '#fff'
         })
     }
+}
+ifScroll();
+$(document).scroll(function () {
+    // console.log($(document).scrollTop());
+    $('.main-picture').css({
+        'top': $(document).scrollTop() * 0.8,
+    });
+
+    ifScroll();
 });
 $('.skills-son1').hover(function () {
     $('.icon-change1').css({
@@ -38,8 +42,6 @@ $('.skills-son1').hover(function () {
     $('.icon-change1 i').css({
         'color': '#515769'
     })
-}).on('click', function () {
-    $(document).appendchild()
 });
 $('.skills-son2').hover(function () {
     $('.icon-change2').css({
@@ -79,3 +81,21 @@ $('.skills-son3').hover(function () {
         'color': '#515769'
     })
 });
+$('.product-son-content').hover(function () {
+    $(this).css({
+        'top': '-50px'
+    });
+}, function () {
+    $(this).css({
+        'top': '0px'
+    });
+}).on('click', function () {
+    var imgClass = $(this).attr('id')
+    layer.open({
+        type: 1,
+        content: $('.' + imgClass + ''),
+        // content: 'sdadasdasdasdlkasjhdjhyasdhsa'
+    })
+})
+
+// console.log($('p', $('.product-son1')));

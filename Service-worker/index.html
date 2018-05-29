@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        if ('serviceWorker' in window.navigator) {
+            navigator.serviceWorker.register('test1.js', {
+                    scope: './'
+                })
+                .then(function (reg) {
+                    console.log('success', reg);
+                        navigator.serviceWorker.controller && navigator.serviceWorker.controller.postMessage("this message is from page");
+                })
+                .catch(function (err) {
+                    console.log('fail', err);
+                });
+        }
+        navigator.serviceWorker.addEventListener('message',function(e){
+            console.log(e.data);
+        })
+    </script>
+
+
+</body>
+
+</html>
