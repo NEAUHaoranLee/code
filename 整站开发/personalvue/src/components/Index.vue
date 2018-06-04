@@ -24,11 +24,8 @@ export default {};
 <style scoped>
 #container {
   width: 700px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  margin: 150px auto 0;
   color: white;
-  transform: translate(-50%, -50%);
   text-align: center;
 }
 strong {

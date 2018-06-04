@@ -4,7 +4,8 @@ import Index from '@/components/Index';
 import Skills from '@/components/Skills';
 import Introduce from '@/components/Introduce';
 import School from '@/components/School';
-import School2 from '@/components/School2'
+import Production from '@/components/Production'
+import Contect from '@/components/Contect';
 
 Vue.use(Router)
 
@@ -30,8 +31,13 @@ export default new Router({
       component: School
     },
     {
-      path: '/school2',
-      component: School2
+      path: '/production',
+      name: 'Production',
+      component: Production
+    }, {
+      path: '/contect',
+      component: Contect,
+      name: 'Contect'
     }
   ]
 })

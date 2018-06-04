@@ -24,7 +24,7 @@ export default {};
 <style scoped>
 #container {
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 100px;
   width: 700px;
   color: white;
   text-indent: 2.4rem;
@@ -36,7 +36,7 @@ p {
 }
 #title {
   text-align: center;
-  font-size: 50px;
+  font-size: 2em;
 }
 #link {
   width: 300px;

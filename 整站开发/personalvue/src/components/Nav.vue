@@ -9,6 +9,8 @@
           <router-link to="/introduce">Introduce</router-link>
           <router-link to="/school">School</router-link>
           <router-link to="/skills">Skills</router-link>
+          <router-link to="/production">Production</router-link>
+          <router-link to="/contect">Contect</router-link>
         </div>
     </div>
 </template>

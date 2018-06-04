@@ -54,5 +54,18 @@ html {
   left: 0;
   right: 0;
   background: #000;
+  color: #fff;
+}
+.color1 {
+  color: #515769;
+  font-weight: 1000;
+  font-size: 35px;
+}
+
+.color2 {
+  color: #a6a7aa;
+  font-weight: 600;
+  font-size: 14px;
+  display: block;
 }
 </style>
