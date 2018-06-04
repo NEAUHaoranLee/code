@@ -11,12 +11,12 @@
 
        </div>
     <div id="contect-me">
-        <div id="el-container">
-            <div class="el">git</div>
-            <div class="el">qq</div>  
-            <div class="el">wx</div>
-            <div class="el">weibo</div>
-            <div class="el">email</div>
+        <div id="el-container" >
+           <div class="el" v-for="(item,index) in el" @mouseover="mo">
+             <div class="details" >
+               <span>{{item}}</span>
+             </div>
+             </div>
         </div>
     </div>
 
@@ -28,8 +28,14 @@ export default {
   data() {
     return {
       c1: "rgb(255, 140, 0)",
-      c2: "rgb(255, 72, 0)"
+      c2: "rgb(255, 72, 0)",
+      el: ["GitHub", "email", "QQ", "weChat", "weibo"]
     };
+  },
+  methods: {
+    mo: function(e) {
+      console.log(e.target);
+    }
   }
 };
 </script>
@@ -53,6 +59,7 @@ export default {
 #t1 {
   font-size: 0.1em;
   padding-right: 5px;
+  color: rgb(100, 105, 121);
 }
 #c1 {
   color: rgb(255, 72, 0);
@@ -71,8 +78,24 @@ export default {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid #ffffff;
+  border: 0.1px solid #ffffff;
   float: left;
   margin: 10px 15px 0;
+  position: relative;
+  cursor: pointer;
+}
+.details {
+  position: absolute;
+  height: 0px;
+  width: 70px;
+  top: 40px;
+  left: -13px;
+  overflow: hidden;
+  color: #ffffff;
+  text-align: center;
+  transition: 0.3s;
+}
+.el:hover .details {
+  height: 20px;
 }
 </style>
