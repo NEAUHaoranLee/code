@@ -1,9 +1,6 @@
 <template>
-  <div id="app">
+  <div id="app" :style="{backgroundPosition:'30% '+p+'%'}">
     <Nav></Nav>
-    <div class="btn" @click="test">
-      {{$store.state.index}}
-    </div>
     <transition :name="transition">
       <router-view class="trans"></router-view>
     </transition>
@@ -19,28 +16,26 @@ export default {
   name: "App",
   data() {
     return {
+      p: 0,
+      flag: true,
       transition: "",
-      index: 0
+      index: 0,
+      path: ["", "introduce", "school", "skills", "production", "contect"]
     };
   },
   computed: {},
   methods: {
-    test() {
-      let index = this.$store.state.index;
-      console.log(this.$store.state.path[index]);
-      this.$router.push({ path: "/" + this.$store.state.path[index] + "" });
-      this.transition = "left";
-      console.log(this.transition);
-    },
     changePage(e) {
+      let store = this.$store;
+      let index = store.state.index;
       //ie&其他
       if (e.wheelDelta) {
         if (parseInt(e.wheelDelta) > 0) {
           this.transition = "slide-right";
-          $store.commit("front");
+          this.front();
         } else {
           this.transition = "slide-left";
-          $store.commit("back");
+          this.back();
         }
       } else if (e.detail) {
         //Firefox
@@ -48,11 +43,38 @@ export default {
         } else {
         }
       }
-      console.log(e.wheelDelta);
+    },
+    front() {
+      if (this.index > 0) {
+        this.flag = false;
+        this.index--;
+        this.p = this.p - 20;
+        this.$router.push({ path: "/" + this.path[this.index] + "" });
+        setTimeout(() => {
+          this.flag = true;
+        }, 300);
+      }
+    },
+    back() {
+      if (this.index < 5) {
+        this.flag = false;
+        this.index++;
+        this.p = this.p + 20;
+        this.$router.push({ path: "/" + this.path[this.index] + "" });
+        setTimeout(() => {
+          this.flag = true;
+        }, 300);
+      }
     }
   },
   mounted() {
-    window.onmousewheel = this.changePage;
+    var timer;
+    window.onmousewheel = e => {
+      e.preventDefault();
+      if (this.flag) {
+        this.changePage(e);
+      }
+    };
   }
 };
 </script>
@@ -101,7 +123,9 @@ html {
 #app {
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: url("../static/img/01.jpg") no-repeat rgba(0, 0, 0, 0.4);
+  background-size: 130%;
+  transition: all 0.3s;
 }
 .page-container {
   position: absolute;
@@ -126,7 +150,7 @@ html {
   display: block;
 }
 .trans {
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 .bg {
   position: absolute;

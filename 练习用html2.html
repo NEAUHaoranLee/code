@@ -1,55 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+<style>
+.div1{
+    height: 1000px;
+    width: 100%;
+    background: #ccc;
+}
+</style>
+
+
 </head>
-
 <body>
-    <div id="123"></div>
-    <div class="aa"></div>
-
-
+    <div class="div1"></div>
     <script>
-        function $(selector, context) {
-            return new Jquery(selector, context); //？
-        }
+    window.onmousewheel=function(e){
+            e.preventDefault();
+    }
 
-        function Jquery(selector, context) {
-            this.elements = []; //jq返回数组所以定义数组？
-            // console.log(this.elements);
-            if (typeof selector === 'string') {
-                if (selector.charAt(0) === '#') {
-                    this.elements.push(document.getElementById(selector.substring(1)));
-                    console.log(this.elements);
-                } else if (selector.charAt(0) === '.') {
-                    this.element.push(document.getElementsByClassName(selector.substring(1)))
-
-                }
-
-            }
-
-        }
-        console.log($('.aa'));
-        // console.log($('#123'));
-
-
-        // var o = {
-        //     name: 'lisi',
-        //     age: 18
-        // };
-        // console.log(o['name']);
-
-
-        // for (var p in o) {
-        //     console.log(o[p]);
-        // }
     </script>
-
-
 </body>
-
 </html>
