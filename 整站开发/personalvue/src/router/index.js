@@ -6,6 +6,7 @@ import Introduce from '@/components/Introduce';
 import School from '@/components/School';
 import Production from '@/components/Production'
 import Contect from '@/components/Contect';
+import Store from '@/components/Store';
 
 Vue.use(Router)
 
@@ -38,6 +39,10 @@ export default new Router({
       path: '/contect',
       component: Contect,
       name: 'Contect'
+    }, {
+      path: '/store',
+      component: Store,
+      name: 's'
     }
   ]
 })

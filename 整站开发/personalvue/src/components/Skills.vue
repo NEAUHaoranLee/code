@@ -41,7 +41,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {};
+  }
+};
 </script>
 <style scoped>
 @import url("../assets/css/font_588793_da6j9kt2m52ep14i/iconfont.css");

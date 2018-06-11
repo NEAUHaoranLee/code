@@ -15,7 +15,7 @@
             left: 0;
             right: 0;
         }
-        
+
         #container .img {
             display: block;
             height: 125px;
@@ -28,7 +28,7 @@
             transition: all 1s ease;
             cursor: pointer;
         }
-        
+
         #container .img span {
             width: 100%;
             height: 100%;
@@ -36,7 +36,7 @@
             display: block;
             transition: all 1s ease;
         }
-        
+
         .arrow {
             height: 50px;
             width: 60px;
@@ -47,13 +47,13 @@
             cursor: pointer;
             transition: all 1s ease;
         }
-        
+
         #prev {
             background: #fff url('img/prev.png') no-repeat center;
             left: 0;
             border-radius: 0 30% 30% 0;
         }
-        
+
         #next {
             right: 0;
             background: #ffffff url('img/next.png') no-repeat center;
@@ -84,7 +84,7 @@
 
             let oThumbsimg = new Image()
             oThumbsimg.src = 'img/thumbs/' + (i + 1) + '.jpg';
-            oThumbsimg.onload = function() {
+            oThumbsimg.onload = function () {
                 count++;
                 if (count == NUM * 2) {
                     loadsuccess();
@@ -92,7 +92,7 @@
             }
             let oImgs = new Image()
             oImgs.src = 'img/' + (i + 1) + '.jpg';
-            oImgs.onload = function() {
+            oImgs.onload = function () {
                 count++;
                 if (count == NUM * 2) {
                     loadsuccess();
@@ -107,10 +107,10 @@
                     oDiv.style.background = 'url(img/thumbs/' + (i * COL + j + 1) + '.jpg) no-repeat';
                     oDiv.className = 'img';
                     oDiv.pos = {
-                            x: i,
-                            y: j
-                        }
-                        //保存编号；
+                        x: i,
+                        y: j
+                    }
+                    //保存编号；
                     oDiv.index = i * COL + j + 1;
                     oContainer.appendChild(oDiv);
                     oDiv.innerHTML = '<span></span>'
@@ -137,7 +137,7 @@
         let oPrev = document.getElementById('prev');
         let oNext = document.getElementById('next');
         // let oNext = document.getElementById('next');
-        oContainer.addEventListener('click', function(e) {
+        oContainer.addEventListener('click', function (e) {
             if (this != e.target) {
                 if (flag) {
                     // console.log('要合并');
@@ -146,8 +146,10 @@
                         aImg[i].style.borderWidth = '1px';
                         aImg[i].style.transitionDelay = '0ms';
                         aImg[i].style.transform = 'rotate(0deg)';
-                        aImg[i].style.top = ((oContainer.offsetHeight - BIG_HEIGHT) / 2) + 125 * aImg[i].pos.x + 'px';
-                        aImg[i].style.left = ((oContainer.offsetWidth - BIG_WIDTH) / 2) + 125 * aImg[i].pos.y + 'px';
+                        aImg[i].style.top = ((oContainer.offsetHeight - BIG_HEIGHT) / 2) + 125 * aImg[i].pos.x +
+                            'px';
+                        aImg[i].style.left = ((oContainer.offsetWidth - BIG_WIDTH) / 2) + 125 * aImg[i].pos.y +
+                            'px';
                         // console.log(aImg[i].style.top);
                         oSpan = aImg[i].getElementsByTagName('span')[0];
                         oSpan.style.opacity = 1;
@@ -157,17 +159,18 @@
                             imgUrl = e.target.parentNode.index
                         }
                         oSpan.style.backgroundImage = 'url(img/' + imgUrl + '.jpg)';
-                        oSpan.style.backgroundPosition = -125 * aImg[i].pos.y + 'px ' + -125 * aImg[i].pos.x + 'px';
+                        oSpan.style.backgroundPosition = -125 * aImg[i].pos.y + 'px ' + -125 * aImg[i].pos.x +
+                            'px';
                         nowIndex = imgUrl;
                         oNext.style.opacity = oPrev.style.opacity = 1;
                     }
                     //箭头操作
-                    oPrev.onclick = oNext.onclick = function(e) {
+                    oPrev.onclick = oNext.onclick = function (e) {
                         let arr = [];
                         for (let i = 0; i < NUM; i++) {
                             arr.push(i);
                         }
-                        arr.sort(function() {
+                        arr.sort(function () {
                             return Math.random() - 0.5;
                         })
                         if (e.target.id == 'prev') {
@@ -196,7 +199,7 @@
                         // }
 
                         let i = 0;
-                        let timer = setInterval(function() {
+                        let timer = setInterval(function () {
                             if (i == NUM - 1) {
                                 clearInterval(timer);
                             }
