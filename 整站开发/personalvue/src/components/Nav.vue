@@ -5,18 +5,33 @@
         <span id="title2">门</span>
       </div>
         <div id="router">
-          <router-link to="/">Index</router-link> 
-          <router-link to="/introduce">Introduce</router-link>
-          <router-link to="/school">School</router-link>
-          <router-link to="/skills">Skills</router-link>
-          <router-link to="/production">Production</router-link>
-          <router-link to="/contect">Contect</router-link>
+          <ul>
+            <li :class="{link,select:isSelect==index}"  @click="navClick(index)" v-for="(item,index) in $store.state.path" :key="index">{{item}}</li>
+          </ul>
         </div>
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      a: "1212",
+      link: "link",
+      isSelect: 0
+    };
+  },
+  methods: {
+    navClick(i) {
+      this.$emit("nav", i);
+      this.isSelect = i;
+    },
+    changeSelect(i) {
+      this.isSelect = i;
+    }
+  },
+  mounted() {}
+};
 </script>
 
 
@@ -59,5 +74,20 @@ export default {};
 
 #title2 {
   color: #00e6e6;
+}
+.link {
+  float: left;
+  margin: 0 10px;
+  color: rgb(73, 73, 73);
+  transition: 0.2s;
+}
+.link:hover {
+  color: rgb(53, 46, 46);
+  transform: scale(1.1, 1.1);
+  cursor: pointer;
+}
+.select {
+  color: rgb(15, 15, 15);
+  transform: scale(1.1, 1.1);
 }
 </style>

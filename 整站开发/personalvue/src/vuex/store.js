@@ -4,6 +4,9 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
+  p: 0,
+  flag: true,
+  transition: "",
   path: ['index', 'introduce', 'school', 'skills', 'production', 'contect'],
   index: 0
 }

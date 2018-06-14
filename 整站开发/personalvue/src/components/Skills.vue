@@ -4,7 +4,7 @@
             <div class="container ">
                     <div class="title">
                         <p class="color1">Skills</p>
-                        <p class="color2">实不相瞒这个网页我敲的</p>
+                        <p class="color3">实不相瞒这个网页我敲的</p>
                     </div>
                 <div class="main">
                     <div class="skills-son1">
@@ -170,12 +170,10 @@ export default {
   text-indent: 0;
   display: block;
 }
-
-/* .skills-content .icon-change2 i {
+.color3 {
   color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  display: block;
 }
-
-.skills-content .icon-change2 {
-  border-color: #fff;
-} */
 </style>

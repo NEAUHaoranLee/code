@@ -19,9 +19,9 @@ export default {
   data() {
     return {
       imgUrl: [
-        "../../static/img/mi.png",
-        "@/assets/img/mi.png",
-        "@/assets/img/mi.png"
+        "../../static/img/productions/mi.png",
+        "../../static/img/productions/树一树小程序.png",
+        "../../static/img/productions/personal.png"
       ]
     };
   }

@@ -1,6 +1,6 @@
 <template>
-  <div id="app" :style="{backgroundPosition:'30% '+p+'%'}">
-    <Nav></Nav>
+  <div id="app" :style="{backgroundPosition:'30% '+p+'%'}" >
+    <Nav @nav="navChangePage" ref="nav"></Nav>
     <transition :name="transition">
       <router-view class="trans"></router-view>
     </transition>
@@ -25,17 +25,27 @@ export default {
   },
   computed: {},
   methods: {
-    changePage(e) {
+    mousewheel(e) {
       let store = this.$store;
       let index = store.state.index;
       //ie&其他
       if (e.wheelDelta) {
         if (parseInt(e.wheelDelta) > 0) {
           this.transition = "slide-right";
-          this.front();
+          if (this.index > 0) {
+            this.index--;
+            this.p = this.p - 20;
+          }
+          this.changePage();
+          this.$refs.nav.changeSelect(this.index);
         } else {
           this.transition = "slide-left";
-          this.back();
+          if (this.index < 5) {
+            this.index++;
+            this.p = this.p + 20;
+          }
+          this.changePage();
+          this.$refs.nav.changeSelect(this.index);
         }
       } else if (e.detail) {
         //Firefox
@@ -44,27 +54,22 @@ export default {
         }
       }
     },
-    front() {
-      if (this.index > 0) {
-        this.flag = false;
-        this.index--;
-        this.p = this.p - 20;
-        this.$router.push({ path: "/" + this.path[this.index] + "" });
-        setTimeout(() => {
-          this.flag = true;
-        }, 300);
-      }
+    changePage() {
+      this.flag = false;
+      this.$router.push({ path: "/" + this.path[this.index] + "" });
+      setTimeout(() => {
+        this.flag = true;
+      }, 300);
     },
-    back() {
-      if (this.index < 5) {
-        this.flag = false;
-        this.index++;
-        this.p = this.p + 20;
-        this.$router.push({ path: "/" + this.path[this.index] + "" });
-        setTimeout(() => {
-          this.flag = true;
-        }, 300);
+    navChangePage(i) {
+      if (this.index > i) {
+        this.transition = "slide-right";
+      } else {
+        this.transition = "slide-left";
       }
+      this.index = i;
+      this.p = i * 20;
+      this.changePage();
     }
   },
   mounted() {
@@ -72,7 +77,7 @@ export default {
     window.onmousewheel = e => {
       e.preventDefault();
       if (this.flag) {
-        this.changePage(e);
+        this.mousewheel(e);
       }
     };
   }

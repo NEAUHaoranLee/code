@@ -1,7 +1,9 @@
 <template>
 <div class="page-container">
     <div id="container">
-    <img src="@/assets/logo.png" alt="" srcset="" id="picture">
+      <div id="picture-container">
+        <img src="../../static/img/introduce/mmexport1508585467324.jpg" alt="" srcset="" id="picture">
+      </div>
     <div id="content">
         <p>大家好 我是Vae
             这是我即将发表的首张 独创专辑 自定义
@@ -37,11 +39,17 @@ export default {
   transform: translate(-50%, -60%);
   text-align: center;
 }
-#picture {
+#picture-container {
   width: 150px;
   height: 150px;
+  margin: 0 auto;
   border-radius: 50%;
   border: 0.5px solid #fff;
+  overflow: hidden;
+}
+#picture {
+  width: 150px;
+  transform: translate(0, -15px);
 }
 #content {
   text-indent: 2.4rem;
