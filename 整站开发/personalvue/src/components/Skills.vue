@@ -12,7 +12,7 @@
                             <div class="icon">
                                 <i class="iconfont icon-html "></i>
                             </div>
-                            <span class="skills-content-detail color2">谢老师这段话并不是真正的内容，他只是用来占地方的，你懂我的意思吧</span>
+                            <span class="skills-content-detail color2">掌握基本的DIV+CSS布局的HTML代码编写，熟悉HTML5、CSS3以及ES6的新语法特性，可以手写符合W3C标准的代码。</span>
                         </div>
                             <div class="bottom"></div>
                     </div>
@@ -21,7 +21,7 @@
                             <div class="icon">
                                 <i class="iconfont icon-diannao "></i>
                             </div>
-                            <span class="skills-content-detail ">谢老师这段话并不是真正的内容，他只是用来占地方的，你懂我的意思吧</span>
+                            <span class="skills-content-detail ">掌握Javascript语法，Vue框架拿来就用，其他框架快速上手，让我用jQuery也不是不行</span>
                             <div class="bottom"></div>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                             <div class="icon">
                                 <i class="iconfont icon-linggan "></i>
                             </div>
-                            <span class="skills-content-detail color2">谢老师这段话并不是真正的内容，他只是用来占地方的，你懂我的意思吧</span>
+                            <span class="skills-content-detail color2">个人认为本人的审美在线，追求一切酷炫的页面，说不定备不住可以对产品设计方面提出建设性建议。</span>
                             <div class="bottom"></div>
                         </div>
                     </div>
@@ -169,6 +169,7 @@ export default {
   font-size: 14px;
   text-indent: 0;
   display: block;
+  text-align: justify;
 }
 .color3 {
   color: #fff;

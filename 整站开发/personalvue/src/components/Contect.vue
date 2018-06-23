@@ -12,8 +12,9 @@
        </div>
     <div id="contect-me">
         <div id="el-container" >
-           <div class="el" v-for="(item,index) in el" @mouseover="mo">
+           <div class="el" v-for="(item,index) in el" @mouseover="mo" :key="index">
              <div class="details" >
+               <img src="../../static/img/contect/.png" alt="">
                <span>{{item}}</span>
              </div>
              </div>

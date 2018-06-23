@@ -7,7 +7,6 @@
       <h2>personal website</h2>
       <br>
       <p>Nothing is difficult if you put your heart in it</p>
-      div
     </div>
 
 
