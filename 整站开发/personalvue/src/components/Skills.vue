@@ -119,11 +119,11 @@ export default {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   transform: scale(1.05, 1.05);
 }
-.skills-son1:hover .bottom,
+/* .skills-son1:hover .bottom,
 .skills-son2:hover .bottom,
 .skills-son3:hover .bottom {
   height: 10%;
-}
+} */
 .bottom {
   position: absolute;
   bottom: 0;

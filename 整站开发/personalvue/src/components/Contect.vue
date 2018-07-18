@@ -56,7 +56,7 @@ export default {
           name: "weibo",
           path: "../../static/img/contect/weibo.png",
           click: "",
-          href: ""
+          href: "#"
         }
       ],
       isShow: ""

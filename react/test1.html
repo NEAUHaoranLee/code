@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="./build/react.js"></script>
+    <script src="./build/react-dom.js"></script>
+    <script src="./browser-min.js"></script>
+    <script type="text/babel">
+      <!--  var Son=React.createClass({
+            render:function(){
+            var msg=[];
+            this.props.arr.forEach(function(elem,index){
+                msg.push(<div key={index}>{elem}</div>)
+            })
+                return(
+                <div>{this.props.aa}
+                    <div>{msg}</div>    
+                </div>)
+            }
+       });
+       var Parent=React.createClass({
+            render:function(){
+                var bb=this.props.bb
+                var arr=[2,3,4,5]
+                return(<div>
+                        <Son aa={bb} arr={arr}></Son>
+                        <button onClick={this.click}>+++</button>
+                        <div>{this.state.count}</div>
+                    </div>)
+            },
+            click:function(e){
+                this.setState({
+                        count:this.state.count+1
+                })
+            },
+            getInitialState:function(){
+                return{
+                    count:0,
+                }
+            }
+       })
+       ReactDOM.render(
+        <Parent bb="lala"></Parent>,
+        document.getElementById('app')
+       ) -->
+       class Test extends React.Component{
+        rander(){
+            return(
+                <h1>Hello World!</h1>
+            )
+        }
+
+       }
+       ReactDOM.rander(
+        <Test/>,
+        document.getElementById('app')
+       )
+    </script>
+
+</body>
+
+</html>

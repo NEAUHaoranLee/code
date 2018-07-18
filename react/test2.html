@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.div{
+		position:absolute;
+		top:30px;
+	}
+		.div1{
+			position: absolute;
+			top: 50px;
+			left: 50px;
+			height: 30px;
+			width: 30px;
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div class="div">
+
+	<div class="div1"></div>
+	</div>
+
+
+	<script>
+	aDiv1=document.querySelector('.div1');
+	console.log(aDiv1.offsetParent.offsetTop);
+
+
+	</script>
+</body>
+</html>

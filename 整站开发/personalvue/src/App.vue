@@ -85,13 +85,6 @@ export default {
 </script>
 
 <style>
-.btn {
-  position: absolute;
-  z-index: 100;
-  width: 100px;
-  height: 100px;
-  background: #cccccc;
-}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -131,6 +124,7 @@ html {
   background: url("../static/img/01.jpg") no-repeat rgba(0, 0, 0, 0.4);
   background-size: 130%;
   transition: all 0.3s;
+  user-select: none;
 }
 .page-container {
   position: absolute;
